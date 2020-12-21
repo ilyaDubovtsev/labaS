@@ -7,5 +7,5 @@ $MySQL_hostname = "sql7.freesqldatabase.com"; //Адрес сервера MySQL
 $MySQL_username = "sql7383292"; //Имя пользователя MySQL
 $MySQL_password = "LiQhRNnKUs"; //Пароль для пользователя MySQL
 $MySQL_databasename = "sql7383292"; //База данных MySQL
-$MySQL_table = "Таблица"; //Таблица MySQL
+$MySQL_table = "Sonya"; //Таблица MySQL
 ?>

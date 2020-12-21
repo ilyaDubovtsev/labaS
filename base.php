@@ -12,7 +12,7 @@ include_once 'globalsettings.php'; //Подключаем скрипт с нашими настройками
 echo "loading db";
 mysql_connect($MySQL_hostname,$MySQL_username,$MySQL_password); //Создаём и открываем соединение с MySQL
 mysql_select_db($MySQL_databasename); //Указываем базу данных для работы
-$command = "SELECT * FROM $MySQL_table WHERE `Hardware ID` = '$hwid'"; //Объявлем комманду
+$command = "SELECT * FROM $MySQL_table WHERE `HardwareID` = '$hwid'"; //Объявлем комманду
 $response = mysql_query($command); //Выполняем комманду и получаем ответ
 $count = mysql_num_rows($response); //Выводим количество полученных рядков с ответа
 $row=mysql_fetch_array($response); //Преобразовываем рядки в массив
@@ -24,7 +24,7 @@ echo "loaded db";
 if ($count == 1) //Если число рядков равно 1
 {
 $curTime = date('d.m.Y H:i:s', time()); //Получаем текущее время (зависит от сервера)
-$endTime = $row['End Time']; //Получаем время истечения срока лицензии
+$endTime = $row['EndTime']; //Получаем время истечения срока лицензии
 $output  .='license=' . '1' . "\r\n"; //Добавляем к переменной значение license=1
 $output  .='[[' . base64_encode($hwid) . ']]' . "\r\n";
 $output  .='CT=' . $curTime . "\r\n"; //Добавляем к переменной значение CT=текущее время
