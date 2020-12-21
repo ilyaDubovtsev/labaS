@@ -1,4 +1,5 @@
 <?php
+echo "lol";
 $token = $_POST['token']; //Получаем токен из Post параметров
 if (!empty($token)) //Проверяем его наличие
 {
@@ -8,7 +9,7 @@ if (!empty($hwid)) //Проверяем его наличие
 include_once 'Crypt/RSA_XML.php'; //Подключаем скрипт для работы с RSA
 include_once 'globalsettings.php'; //Подключаем скрипт с нашими настройками
 
-
+echo "loading db";
 mysql_connect($MySQL_hostname,$MySQL_username,$MySQL_password); //Создаём и открываем соединение с MySQL
 mysql_select_db($MySQL_databasename); //Указываем базу данных для работы
 $command = "SELECT * FROM $MySQL_table WHERE `Hardware ID` = '$hwid'"; //Объявлем комманду
@@ -17,6 +18,8 @@ $count = mysql_num_rows($response); //Выводим количество полученных рядков с отв
 $row=mysql_fetch_array($response); //Преобразовываем рядки в массив
 
 $output; //Переменная, в которую будем добавлять информацию
+
+echo "loaded db";
 
 if ($count == 1) //Если число рядков равно 1
 {
